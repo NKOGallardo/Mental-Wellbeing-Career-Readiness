@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Wellbeing & Career Readiness</title>
-    <link href="css.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span>
+        <span id="theme-text">Dark Mode</span>
+    </div>
+
     <div class="floating-shapes">
         <div class="shape"></div>
         <div class="shape"></div>
@@ -110,11 +115,32 @@
             <div class="call-to-action">
                 <h2 class="cta-title">Invest in Your Mental Wellbeing Today</h2>
                 <p class="cta-text">Your career success starts with taking care of your mental and emotional health. Small steps toward wellbeing can create significant professional opportunities.</p>
-                <a href="" class="cta-button">Created by NKO_Gallardo</a>
+                <a href="#" class="cta-button">Start Your Wellness Journey</a>
             </div>
         </div>
     </div>
 
-    <script href="js.js"> </script>
+    <script href="js.js">
+    
+           // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const themeText = document.getElementById('theme-text');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+    
+    </script>
 </body>
 </html>
